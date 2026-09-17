@@ -29,7 +29,7 @@
     <section class="subscribe-panel">
       <span class="eyebrow">/// RAZOR COMMUNITY</span>
       <h1>Inscreva-se no <span>canal.</span></h1>
-      <p>Inscreva-se no canal oficial e permaneça nesta página. Após 10 segundos, o botão de download será liberado.</p>
+      <p>Inscreva-se no canal oficial e aguarde o botão ser liberado nesta página.</p>
 
       <div class="youtube-box">
         <div class="youtube-icon">▶</div>
@@ -41,14 +41,14 @@
           </a>
 
           <button id="downloadScript" class="action-button download-button" type="button" disabled>
-            Download Script (10s)
+            Download Script
           </button>
         </div>
 
-        <p id="countdown" class="countdown">Clique em Inscrever-se e aguarde nesta página.</p>
+        <p id="countdown" class="countdown">Inscreva-se e aguarde o botão ser liberado nesta página.</p>
       </div>
 
-      <p class="notice">O download será liberado 10 segundos após clicar em Inscrever-se.</p>
+      <p class="notice">O botão de download será liberado 10 segundos após clicar em Inscrever-se.</p>
     </section>
   </main>
 
@@ -62,20 +62,15 @@
     subscribeButton.addEventListener('click', () => {
       if (timerStarted) return;
       timerStarted = true;
-      countdown.textContent = 'Inscrição iniciada. Aguarde 10 segundos nesta página...';
+      countdown.textContent = 'Inscreva-se e aguarde o botão ser liberado nesta página.';
 
       const timer = setInterval(() => {
         seconds--;
 
-        if (seconds > 0) {
-          countdown.textContent = `Aguarde ${seconds} segundos nesta página...`;
-          downloadButton.textContent = `Download Script (${seconds}s)`;
-          return;
-        }
+        if (seconds > 0) return;
 
         clearInterval(timer);
         downloadButton.disabled = false;
-        downloadButton.textContent = 'Download Script';
         countdown.textContent = 'Download liberado!';
       }, 1000);
     });
