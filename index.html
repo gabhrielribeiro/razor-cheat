@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .youtube-section{margin-top:26px}.youtube-panel{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px;border:1px solid #30352c;border-radius:12px;background:#111317}.youtube-copy h3{margin:8px 0;font-size:24px}.youtube-copy p{margin:0;color:#9299a3;font-size:13px;line-height:1.7}.youtube-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.youtube-button{display:inline-flex;align-items:center;gap:9px;background:#c92525;color:#fff;padding:13px 17px;border-radius:6px;font-size:11px;font-weight:900;text-decoration:none}.youtube-button:hover{background:#e03434}.youtube-button span{font-size:16px}.youtube-note{margin-top:10px;color:#737b85;font-size:10px}@media(max-width:700px){.youtube-panel{flex-direction:column;align-items:flex-start}}
+    .youtube-section{margin-top:26px}.youtube-panel{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px;border:1px solid #30352c;border-radius:12px;background:#111317}.youtube-copy h3{margin:8px 0;font-size:24px}.youtube-copy p{margin:0;color:#9299a3;font-size:13px;line-height:1.7}.youtube-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.youtube-embed{display:flex;align-items:center;justify-content:center;min-width:180px;padding:14px 18px;background:#08090b;border:1px solid #30343a;border-radius:8px}.youtube-note{margin-top:10px;color:#737b85;font-size:10px}@media(max-width:700px){.youtube-panel{flex-direction:column;align-items:flex-start}.youtube-embed{width:100%;justify-content:flex-start}}
   </style>
 </head>
 <body>
@@ -86,13 +86,14 @@
       <div class="youtube-panel">
         <div class="youtube-copy">
           <span class="eyebrow">/// CANAL OFICIAL</span>
-          <h3 id="youtube-title">Acompanhe as novidades no YouTube.</h3>
-          <p>Inscreva-se no canal oficial Gabriel Ribeiro | Dev e acompanhe os próximos conteúdos da comunidade.</p>
-          <div class="youtube-note">O YouTube pode solicitar login para confirmar a inscrição.</div>
+          <h3 id="youtube-title">Inscreva-se sem sair do site.</h3>
+          <p>Acompanhe o canal Gabriel Ribeiro | Dev diretamente pelo botão oficial do YouTube.</p>
+          <div class="youtube-note">O YouTube pode solicitar login ou abrir uma janela de autenticação.</div>
         </div>
         <div class="youtube-actions">
-          <a class="youtube-button" href="https://www.youtube.com/@devryze07?sub_confirmation=1" target="_blank" rel="noopener noreferrer"><span>▶</span> Inscrever-se</a>
-          <a class="secondary-button" href="https://www.youtube.com/@devryze07" target="_blank" rel="noopener noreferrer">Abrir canal ↗</a>
+          <div class="youtube-embed">
+            <div class="g-ytsubscribe" data-channelid="UCxHtLasgwqt4vVQet3UVdvQ" data-layout="full" data-count="hidden"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -103,6 +104,7 @@
   </main>
 
   <footer class="footer container"><div class="brand"><span class="brand-mark">R</span><span>RAZOR<span class="brand-muted">.COMMUNITY</span></span></div><p>© 2026 Razor Community. Feito para a comunidade gamer.</p><span class="footer-status"><span class="status-dot"></span> Todos os sistemas online</span></footer>
+  <script src="https://apis.google.com/js/platform.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
