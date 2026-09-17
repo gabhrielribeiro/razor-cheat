@@ -6,7 +6,7 @@
   <title>Razor Community | Inscrição</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .subscribe-page{min-height:100vh;display:grid;place-items:center;padding:40px 0}.subscribe-panel{width:min(620px,100%);padding:40px;background:#111317;border:1px solid #30352c;border-radius:14px;text-align:center}.subscribe-panel h1{font-size:36px;letter-spacing:-1.5px;margin:16px 0}.subscribe-panel h1 span{color:#d8f64b}.subscribe-panel p{color:#9299a3;font-size:13px;line-height:1.8;margin-bottom:26px}.youtube-box{background:#08090b;border:1px solid #30343a;border-radius:10px;padding:25px;margin:20px 0}.youtube-box iframe{max-width:100%;border:0;border-radius:8px}.release-button{display:inline-block;margin-top:22px;background:#d8f64b;color:#10120b;border:0;border-radius:6px;padding:14px 20px;font-size:11px;font-weight:900;cursor:pointer}.release-button:disabled{opacity:.4;cursor:not-allowed}.notice{font-size:10px;color:#737b85;margin-top:15px}
+    .subscribe-page{min-height:100vh;display:grid;place-items:center;padding:40px 0}.subscribe-panel{width:min(620px,100%);padding:40px;background:#111317;border:1px solid #30352c;border-radius:14px;text-align:center}.subscribe-panel h1{font-size:36px;letter-spacing:-1.5px;margin:16px 0}.subscribe-panel h1 span{color:#d8f64b}.subscribe-panel p{color:#9299a3;font-size:13px;line-height:1.8;margin-bottom:26px}.youtube-box{background:#08090b;border:1px solid #30343a;border-radius:10px;padding:25px;margin:20px 0;min-height:74px;display:grid;place-items:center}.release-button{display:inline-block;margin-top:22px;background:#d8f64b;color:#10120b;border:0;border-radius:6px;padding:14px 20px;font-size:11px;font-weight:900;cursor:pointer}.notice{font-size:10px!important;color:#737b85!important;margin-top:15px}
   </style>
 </head>
 <body>
@@ -15,30 +15,16 @@
       <span class="eyebrow">/// RAZOR COMMUNITY</span>
       <h1>Inscreva-se no <span>canal.</span></h1>
       <p>Inscreva-se no canal oficial da comunidade e acompanhe as novidades e recursos autorizados.</p>
+
       <div class="youtube-box">
-        <div id="youtube-subscribe-button"></div>
-        <p class="notice">O botão oficial do YouTube é carregado abaixo.</p>
+        <div class="g-ytsubscribe" data-channel="devryze07" data-layout="full" data-count="default"></div>
       </div>
-      <button class="release-button" id="release-button" type="button">Já me inscrevi — continuar →</button>
-      <p class="notice" id="release-notice">A confirmação real da inscrição exige autenticação autorizada. Este botão não comprova a inscrição.</p>
+
+      <a class="release-button" href="https://www.youtube.com/@devryze07?sub_confirmation=1" target="_blank" rel="noopener noreferrer">Inscrever-se no YouTube →</a>
+      <p class="notice">O botão abre o canal oficial. A inscrição não é validada automaticamente pelo site.</p>
     </section>
   </main>
+
   <script src="https://apis.google.com/js/platform.js"></script>
-  <script>
-    // ID do canal oficial do YouTube.
-    const CHANNEL_ID = 'xHtLasgwqt4vVQet3UVdvQ';
-
-    const mount = document.querySelector('#youtube-subscribe-button');
-    const button = document.querySelector('#release-button');
-    const notice = document.querySelector('#release-notice');
-
-    mount.innerHTML = `<div class="g-ytsubscribe" data-channelid="${CHANNEL_ID}" data-layout="full" data-count="default"></div>`;
-    if (window.gapi && window.gapi.ytsubscribe) window.gapi.ytsubscribe.go();
-
-    button.addEventListener('click', () => {
-      notice.textContent = 'Acesso demonstrativo: configure uma verificação no backend antes de liberar recursos privados.';
-      button.disabled = true;
-    });
-  </script>
 </body>
 </html>
