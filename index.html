@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Razor Community — comunidade gamer de scripts e ferramentas." />
+  <title>Razor Community | Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-grid"></div>
+
+  <header class="navbar container">
+    <a class="brand" href="#home" aria-label="Razor Community">
+      <span class="brand-mark">R</span>
+      <span>RAZOR<span class="brand-muted">.COMMUNITY</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a class="active" href="#home">Início</a>
+      <a href="#tools">Ferramentas</a>
+      <a href="#community">Comunidade</a>
+    </nav>
+    <a class="nav-button" href="#register">Entrar na comunidade <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-copy">
+        <div class="status-pill"><span class="status-dot"></span> Comunidade online <span class="status-separator">•</span> Atualizações frequentes</div>
+        <h1>YOUR GAME.<br /><span>YOUR COMMUNITY.</span></h1>
+        <p>Um espaço para jogadores encontrarem ferramentas, scripts permitidos e novidades da comunidade Razor.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#register">Inscreva-se agora <span>→</span></a>
+          <a class="secondary-button" href="#tools">Explorar ferramentas</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>2.4K+</strong><small>Membros</small></div>
+          <div><strong>24/7</strong><small>Comunidade</small></div>
+          <div><strong>100%</strong><small>Atualizado</small></div>
+        </div>
+      </div>
+      <div class="community-card-wrap">
+        <div class="card-glow"></div>
+        <article class="community-card">
+          <div class="card-cover"><span class="cover-symbol">RZ</span><span class="cover-tag">OFFICIAL</span></div>
+          <div class="card-body">
+            <div class="avatar">R</div>
+            <h2>Razor Community <span class="verified">✦</span></h2>
+            <div class="member-line"><span class="online-dot"></span> 33 online <span>•</span> 1.227 membros</div>
+            <p>Desde fev. de 2026</p>
+            <div class="card-footer"><span>RAZOR HUB</span><span class="lock-icon">◈</span></div>
+          </div>
+        </article>
+        <div class="floating-badge badge-one">✦ COMMUNITY</div>
+        <div class="floating-badge badge-two">● ONLINE</div>
+      </div>
+    </section>
+
+    <section class="tools-section container" id="tools">
+      <div class="section-heading"><div><span class="eyebrow">/// CENTRAL DE RECURSOS</span><h2>Explore o <span>Razor Hub</span></h2></div><span class="section-count">03 RECURSOS</span></div>
+      <div class="tool-grid">
+        <article class="tool-card featured"><div class="tool-icon">⌘</div><span class="tool-label">DESTAQUE</span><h3>Scripts da comunidade</h3><p>Encontre projetos e recursos compartilhados pelos membros.</p><a href="#register">Ver recurso <span>→</span></a></article>
+        <article class="tool-card"><div class="tool-icon">▣</div><span class="tool-label">EM BREVE</span><h3>Downloads</h3><p>Área organizada para arquivos e ferramentas autorizadas.</p><a href="#register">Acessar <span>→</span></a></article>
+        <article class="tool-card"><div class="tool-icon">⌁</div><span class="tool-label">COMUNIDADE</span><h3>Atualizações</h3><p>Acompanhe novidades, changelogs e anúncios do projeto.</p><a href="#community">Saiba mais <span>→</span></a></article>
+      </div>
+    </section>
+
+    <section class="register-section container" id="register">
+      <div class="register-panel">
+        <div><span class="eyebrow">/// ACESSO DA COMUNIDADE</span><h2>Faça parte do <span>Razor.</span></h2><p>Registre seu interesse para acessar as novidades e recursos liberados pela comunidade.</p></div>
+        <form id="register-form" class="register-form">
+          <label for="username">Seu nome de usuário</label>
+          <div class="input-row"><input id="username" name="username" type="text" placeholder="Digite seu usuário" minlength="3" required /><button type="submit">Inscrever-se →</button></div>
+          <small id="form-message" class="form-message" aria-live="polite"></small>
+        </form>
+      </div>
+    </section>
+
+    <section class="community-section container" id="community">
+      <div class="community-banner"><div><span class="eyebrow">/// JUNTE-SE AO MOVIMENTO</span><h2>O próximo nível começa aqui.</h2></div><a class="secondary-button" href="#register">Entrar agora ↗</a></div>
+    </section>
+  </main>
+
+  <footer class="footer container"><div class="brand"><span class="brand-mark">R</span><span>RAZOR<span class="brand-muted">.COMMUNITY</span></span></div><p>© 2026 Razor Community. Feito para a comunidade gamer.</p><span class="footer-status"><span class="status-dot"></span> Todos os sistemas online</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
