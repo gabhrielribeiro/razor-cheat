@@ -1,7 +1,6 @@
 // Configuração pública da comunidade.
-// Substitua pelo endereço oficial do seu canal.
 const COMMUNITY_CONFIG = {
-  channelUrl: 'https://www.youtube.com/',
+  channelUrl: 'https://www.youtube.com/@devryze07',
 };
 
 const form = document.querySelector('#register-form');
@@ -15,19 +14,12 @@ if (form && message) {
     if (!username) return;
 
     message.textContent = `Cadastro local concluído, ${username}! Acesse o canal oficial para acompanhar as novidades.`;
-
-    const existingButton = document.querySelector('#channel-access');
-    if (!existingButton) {
-      const button = document.createElement('a');
-      button.id = 'channel-access';
-      button.className = 'primary-button';
-      button.href = COMMUNITY_CONFIG.channelUrl;
-      button.target = '_blank';
-      button.rel = 'noopener noreferrer';
-      button.textContent = 'Visitar canal oficial ↗';
-      button.style.display = 'inline-block';
-      button.style.marginTop = '14px';
-      form.appendChild(button);
-    }
   });
 }
+
+// Solicita a renderização do botão oficial depois que o YouTube carregar.
+window.addEventListener('load', () => {
+  if (window.gapi?.ytsubscribe?.go) {
+    window.gapi.ytsubscribe.go();
+  }
+});
