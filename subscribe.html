@@ -6,7 +6,22 @@
   <title>Razor Community | Inscrição</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .subscribe-page{min-height:100vh;display:grid;place-items:center;padding:40px 0}.subscribe-panel{width:min(620px,100%);padding:40px;background:#111317;border:1px solid #30352c;border-radius:14px;text-align:center}.subscribe-panel h1{font-size:36px;letter-spacing:-1.5px;margin:16px 0}.subscribe-panel h1 span{color:#d8f64b}.subscribe-panel p{color:#9299a3;font-size:13px;line-height:1.8;margin-bottom:26px}.youtube-box{background:#08090b;border:1px solid #30343a;border-radius:10px;padding:30px 25px;margin:20px 0;display:grid;place-items:center}.youtube-icon{font-size:42px;margin-bottom:12px}.youtube-subscribe-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:18px;background:#ff0033;color:#fff;border:0;border-radius:6px;padding:16px 26px;font-size:13px;font-weight:900;cursor:pointer;text-decoration:none;transition:transform .2s,filter .2s}.youtube-subscribe-button:hover{filter:brightness(1.12);transform:translateY(-2px)}.youtube-subscribe-button .play{font-size:18px}.notice{font-size:10px!important;color:#737b85!important;margin-top:15px}
+    .subscribe-page{min-height:100vh;display:grid;place-items:center;padding:40px 0}
+    .subscribe-panel{width:min(620px,100%);padding:40px;background:#111317;border:1px solid #30352c;border-radius:14px;text-align:center}
+    .subscribe-panel h1{font-size:36px;letter-spacing:-1.5px;margin:16px 0}
+    .subscribe-panel h1 span{color:#d8f64b}
+    .subscribe-panel p{color:#9299a3;font-size:13px;line-height:1.8;margin-bottom:26px}
+    .youtube-box{background:#08090b;border:1px solid #30343a;border-radius:10px;padding:30px 25px;margin:20px 0;display:grid;place-items:center}
+    .youtube-icon{font-size:42px;margin-bottom:12px}
+    .buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:22px}
+    .action-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:6px;padding:16px 22px;font-size:13px;font-weight:900;cursor:pointer;text-decoration:none;transition:transform .2s,filter .2s}
+    .action-button:hover:not(:disabled){filter:brightness(1.12);transform:translateY(-2px)}
+    .youtube-subscribe-button{background:#ff0033;color:#fff}
+    .release-button{background:#d8f64b;color:#10130b}
+    .release-button:disabled{background:#3b4149;color:#858c96;cursor:not-allowed;transform:none;filter:none}
+    .youtube-subscribe-button .play{font-size:18px}
+    .countdown{font-size:12px!important;color:#d8f64b!important;margin:18px 0 0!important}
+    .notice{font-size:10px!important;color:#737b85!important;margin-top:15px}
   </style>
 </head>
 <body>
@@ -14,18 +29,52 @@
     <section class="subscribe-panel">
       <span class="eyebrow">/// RAZOR COMMUNITY</span>
       <h1>Inscreva-se no <span>canal.</span></h1>
-      <p>Inscreva-se no canal oficial da comunidade e acompanhe as novidades e recursos autorizados.</p>
+      <p>Inscreva-se no canal oficial da comunidade e aguarde 10 segundos para liberar o botão do script.</p>
 
       <div class="youtube-box">
         <div class="youtube-icon">▶</div>
         <h3>Canal oficial Gabhriel Ribeiro</h3>
-        <a class="youtube-subscribe-button" href="https://www.youtube.com/@GabhrielRib%C3%AAiro?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
-          <span class="play">▶</span> Inscrever-se no YouTube
-        </a>
+
+        <div class="buttons">
+          <a class="action-button youtube-subscribe-button" href="https://www.youtube.com/@GabhrielRib%C3%AAiro?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
+            <span class="play">▶</span> Inscrever-se
+          </a>
+
+          <button id="releaseScript" class="action-button release-button" type="button" disabled>
+            Liberar Script (10s)
+          </button>
+        </div>
+
+        <p id="countdown" class="countdown">Aguarde 10 segundos...</p>
       </div>
 
-      <p class="notice">O botão abre a confirmação de inscrição do YouTube em uma nova aba.</p>
+      <p class="notice">O botão Liberar Script será ativado automaticamente após 10 segundos.</p>
     </section>
   </main>
+
+  <script>
+    const releaseButton = document.getElementById('releaseScript');
+    const countdown = document.getElementById('countdown');
+    let seconds = 10;
+
+    const timer = setInterval(() => {
+      seconds--;
+
+      if (seconds > 0) {
+        countdown.textContent = `Aguarde ${seconds} segundos...`;
+        releaseButton.textContent = `Liberar Script (${seconds}s)`;
+        return;
+      }
+
+      clearInterval(timer);
+      releaseButton.disabled = false;
+      releaseButton.textContent = 'Liberar Script';
+      countdown.textContent = 'Botão liberado!';
+    }, 1000);
+
+    releaseButton.addEventListener('click', () => {
+      alert('O botão foi liberado. Configure aqui o destino do seu conteúdo autorizado.');
+    });
+  </script>
 </body>
 </html>
