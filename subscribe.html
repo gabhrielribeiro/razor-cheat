@@ -6,9 +6,8 @@
   <title>Razor Community | Inscrição</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .subscribe-page{min-height:100vh;display:grid;place-items:center;padding:40px 0}.subscribe-panel{width:min(620px,100%);padding:40px;background:#111317;border:1px solid #30352c;border-radius:14px;text-align:center}.subscribe-panel h1{font-size:36px;letter-spacing:-1.5px;margin:16px 0}.subscribe-panel h1 span{color:#d8f64b}.subscribe-panel p{color:#9299a3;font-size:13px;line-height:1.8;margin-bottom:26px}.youtube-box{background:#08090b;border:1px solid #30343a;border-radius:10px;padding:30px 25px;margin:20px 0;display:grid;place-items:center}.youtube-icon{font-size:42px;margin-bottom:12px}.notice{font-size:10px!important;color:#737b85!important;margin-top:15px}
+    .subscribe-page{min-height:100vh;display:grid;place-items:center;padding:40px 0}.subscribe-panel{width:min(620px,100%);padding:40px;background:#111317;border:1px solid #30352c;border-radius:14px;text-align:center}.subscribe-panel h1{font-size:36px;letter-spacing:-1.5px;margin:16px 0}.subscribe-panel h1 span{color:#d8f64b}.subscribe-panel p{color:#9299a3;font-size:13px;line-height:1.8;margin-bottom:26px}.youtube-box{background:#08090b;border:1px solid #30343a;border-radius:10px;padding:30px 25px;margin:20px 0;display:grid;place-items:center}.youtube-icon{font-size:42px;margin-bottom:12px}.youtube-subscribe-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:18px;background:#ff0033;color:#fff;border:0;border-radius:6px;padding:16px 26px;font-size:13px;font-weight:900;cursor:pointer;text-decoration:none;transition:transform .2s,filter .2s}.youtube-subscribe-button:hover{filter:brightness(1.12);transform:translateY(-2px)}.youtube-subscribe-button .play{font-size:18px}.notice{font-size:10px!important;color:#737b85!important;margin-top:15px}
   </style>
-  <script src="https://apis.google.com/js/platform.js"></script>
 </head>
 <body>
   <main class="subscribe-page container">
@@ -20,10 +19,12 @@
       <div class="youtube-box">
         <div class="youtube-icon">▶</div>
         <h3>Canal oficial Gabhriel Ribeiro</h3>
-        <div class="g-ytsubscribe" data-channelid="UCxHtLasgwqt4vVQet3UVdvQ" data-layout="full" data-count="default"></div>
+        <a class="youtube-subscribe-button" href="https://www.youtube.com/@GabhrielRib%C3%AAiro?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
+          <span class="play">▶</span> Inscrever-se no YouTube
+        </a>
       </div>
 
-      <p class="notice">Clique no botão vermelho do YouTube para se inscrever. Dependendo da sua conta, o YouTube poderá solicitar autenticação.</p>
+      <p class="notice">O botão abre a confirmação de inscrição do YouTube em uma nova aba.</p>
     </section>
   </main>
 </body>
